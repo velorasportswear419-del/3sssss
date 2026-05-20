@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3somy Birthday</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:serif;
+}
+
+body{
+background:#fff7fa;
+overflow-y:auto;
+color:#701246;
+}
+
+
+/* PAGES */
+
+.page{
+display:none;
+min-height:100vh;
+padding:30px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.active{
+display:flex;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:30px;
+border-radius:30px;
+width:100%;
+max-width:700px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* TEXT */
+
+h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+p{
+font-size:22px;
+line-height:2;
+}
+
+/* BUTTON */
+
+button{
+background:#701246;
+color:white;
+border:none;
+padding:15px 40px;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* OPTIONS */
+
+.option{
+padding:15px;
+margin-top:15px;
+border:1px solid #eee;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+font-size:20px;
+}
+
+.option:hover{
+background:#ffe8f3;
+}
+
+/* CONFETTI */
+
+#confetti-container{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:999;
+}
+
+.confetti{
+position:absolute;
+font-size:30px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="confetti-container"></div>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<h1>
+Happy Birthday 🎂
+<br>
+3somy
+</h1>
+
+<p>
+A little surprise for you ❤️
+</p>
+
+<button onclick="startCelebration()">
+Celebrate 🎉
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="card">
+
+<h1>Quick Quiz for 3somy </h1>
+
+<p>
+بتحب مين أكتر؟
+</p>
+
+<div class="option" onclick="correct1()">
+أنا
+</div>
+
+<div class="option" onclick="wrongAnswer()">
+ميسي
+</div>
+
+<div class="option" onclick="wrongAnswer()">
+ أكلة السمك
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<div class="card">
+
+<h1>السؤال التاني 🍔</h1>
+
+<p>
+لو قولتلك في يوم مش قادرة أعمل أكل؟
+</p>
+
+<div class="option" onclick="wrongAnswer()">
+ مليش دعوة جعان
+</div>
+
+<div class="option" onclick="wrongAnswer()">
+ هتتقمص
+</div>
+
+<div class="option" onclick="correct2()">
+ ارتاحي يا بابا وأنا هطلبلنا أكل
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<div class="card">
+
+<h1> لسؤال التالت 🚘</h1>
+
+<p>
+بتحبني أنا ولا البوليفارد ولا BMW؟
+</p>
+
+<div class="option" onclick="nextPage(5)">
+ أنتي
+</div>
+
+<div class="option" onclick="wrongAnswer()">
+🌆 البوليفارد
+</div>
+
+<div class="option" onclick="wrongAnswer()">
+🚗 BMW
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<div class="card">
+
+<h1>
+To My man 
+</h1>
+
+<p>
+  بخخخخ كل سنة وانت طيب يا حبيبي
+كل سنه وانت معايا وجمبي ودايما محقق كل   الل بتتمناه يارب ،بحبك وبحب كل حاجه بينا وممتنه لكل لحظه عدت بينا ولسه هتعدي 
+<br><br>
+وجودك في حياتي هو أحلى حاجة حصلتلي،
+وكل يوم معاك بيبقى أخف وأجمل.
+<br><br>
+بحب ضحكتك واهتمامك وطريقتك معايا وحنيتك اجمل حد يتم التسعتاشر سنه ويارب سنين العمر كلهاا ليك يروحي ،،بحبكككك اويييي
+متلخبطه بس اناا بحبك اوي وبحب وجودك فحياتي جدا، مواقف كتير اوي  بينا كفيله تخليني اقول وبكل ثقه اني اختارت راجل بجد راجل بيخاف عليا بيحبني وصايني انت م متخيل انت جميل ومريح وحنين قد اي بحبك اوي ويارب السنه الجايه اشوفك محقق كل الل بتتمناه وتجيب البوليفارد الل هيجننك ،بحبك يا بيه😂❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* CONFETTI */
+
+function startCelebration(){
+
+const emojis = ["🎊","🎊","🎊","🎊","🎊","🎊"];
+
+const container =
+document.getElementById("confetti-container");
+
+for(let i = 0; i < 40; i++){
+
+const confetti =
+document.createElement("div");
+
+confetti.classList.add("confetti");
+
+confetti.innerHTML =
+emojis[Math.floor(Math.random()*emojis.length)];
+
+confetti.style.left =
+Math.random()*100 + "vw";
+
+confetti.style.animationDuration =
+(Math.random()*3 + 2) + "s";
+
+confetti.style.fontSize =
+(Math.random()*20 + 20) + "px";
+
+container.appendChild(confetti);
+
+setTimeout(()=>{
+confetti.remove();
+},5000);
+
+}
+
+setTimeout(()=>{
+nextPage(2);
+},2500);
+
+}
+
+/* NEXT PAGE */
+
+function nextPage(page){
+
+document.querySelectorAll(".page")
+.forEach(p=>{
+p.classList.remove("active");
+});
+
+document.getElementById("page"+page)
+.classList.add("active");
+
+}
+
+/* WRONG ANSWER */
+
+function wrongAnswer(){
+
+navigator.vibrate(500);
+
+const popup = document.createElement("div");
+
+popup.innerHTML = "😡 طب مفيش عيد ميلاد";
+
+popup.style.position = "fixed";
+popup.style.top = "50%";
+popup.style.left = "50%";
+popup.style.transform = "translate(-50%,-50%)";
+popup.style.background = "#701246";
+popup.style.color = "white";
+popup.style.padding = "15px 35px";
+popup.style.borderRadius = "15px";
+popup.style.fontSize = "18px";
+popup.style.width = "260px";
+popup.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
+popup.style.zIndex = "9999";
+popup.style.textAlign = "center";
+
+document.body.appendChild(popup);
+
+setTimeout(()=>{
+popup.remove();
+},2000);
+
+}
+
+/* CORRECT ANSWERS */
+
+function correct1(){
+nextPage(3);
+}
+
+function correct2(){
+nextPage(4);
+}
+
+</script>
+
+</body>
+
+</html>
